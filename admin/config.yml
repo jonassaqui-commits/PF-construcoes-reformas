@@ -1,0 +1,42 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "fotos"
+public_folder: "/fotos"
+
+locale: "pt"
+
+collections:
+  - name: "obras"
+    label: "Obras"
+    files:
+      - name: "portfolio"
+        label: "Portfólio de obras"
+        file: "content/obras.json"
+        format: "json"
+        fields:
+          - label: "Obras"
+            name: "obras"
+            widget: "list"
+            fields:
+              - label: "Título"
+                name: "titulo"
+                widget: "string"
+              - label: "Categoria"
+                name: "categoria"
+                widget: "select"
+                options:
+                  - "Construção residencial"
+                  - "Reforma"
+                  - "Acabamento"
+                  - "Alvenaria"
+                  - "Pisos e revestimentos"
+                  - "Obra em andamento"
+              - label: "Foto"
+                name: "foto"
+                widget: "image"
+              - label: "Descrição"
+                name: "descricao"
+                widget: "text"
+                required: false
